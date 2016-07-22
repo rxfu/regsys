@@ -42,7 +42,7 @@
 						<a href="{{ url('register/list') }}" title="活动管理">活动管理</a>
 					</li>
 					<li role="presentation">
-						<a href="{{ url('auth/change') }}" title="修改密码">修改密码</a>
+						<a href="{{ url('password/change') }}" title="修改密码">修改密码</a>
 					</li>
 					<li role="presentation">
 						<a href="{{ url('auth/logout') }}" title="登出">登出</a>
