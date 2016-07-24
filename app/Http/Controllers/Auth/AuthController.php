@@ -28,7 +28,7 @@ class AuthController extends Controller {
 	 *
 	 * @var string
 	 */
-	protected $redirectTo = 'register/list';
+	protected $redirectTo = 'competition/list';
 
 	protected $usename = 'username';
 

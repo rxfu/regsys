@@ -45,11 +45,11 @@
 						<a href="{{ url('password/change') }}" title="修改密码">修改密码</a>
 					</li>
 					<li role="presentation">
-						<a href="{{ url('auth/logout') }}" title="登出">登出</a>
+						<a href="{{ url('logout') }}" title="登出">登出</a>
 					</li>
 				</ul>
 			@else
-				<a href="{{ url('auth/login') }}" title="管理">管理</a>
+				<a href="{{ url('login') }}" title="管理">管理</a>
             @endif
 			</div>
 			@yield('content')

@@ -12,12 +12,14 @@
  */
 
 Route::get('/', function () {
-	return view('welcome');
+	return redirect()->route('register.show');
 });
 
 Route::auth();
 
+Route::get('register/register', ['as' => 'register.show', 'uses' => 'RegisterController@showRegisterForm']);
+
 Route::group(['middleware' => ['auth']], function () {
-	Route::get('password/change', ['as' => 'password.password', 'Auth\PasswordController@showChangePasswordForm']);
-	Route::put('password/change', ['as' => 'password.change', 'Auth\PasswordController@changePassword']);
+	Route::get('password/change', ['as' => 'password.password', 'uses' => 'Auth\PasswordController@showChangePasswordForm']);
+	Route::put('password/change', ['as' => 'password.change', 'uses' => 'Auth\PasswordController@changePassword']);
 });
