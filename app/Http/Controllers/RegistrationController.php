@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Competition;
 use App\Registration;
+use Illuminate\Http\Request;
 
 class RegistrationController extends Controller {
 
@@ -11,10 +13,27 @@ class RegistrationController extends Controller {
 			->orderBy('created_at')
 			->get();
 
-		return view('registration.index', compact($registrations));
+		return view('registration.index', compact('registrations'));
 	}
 
 	public function showRegisterForm() {
-		return view('registration.register');
+		$competitions = Competition::whereIsActive(1)
+			->orderBy('created_at', 'desc')
+			->get();
+
+		return view('registration.register', compact('competitions'));
+	}
+
+	public function store(Request $request) {
+		$inputs = $request->all();
+
+		foreach ($inputs['competitions'] as $competition) {
+			$registration = new Registration;
+			$registration->fill($inputs);
+			$registration->competition_id = $competition;
+			$registration->save();
+		}
+
+		return redirect('registration/register')->withStatus('报名成功');
 	}
 }

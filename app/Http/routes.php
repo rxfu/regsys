@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('registration/registration', ['as' => 'registration.show', 'uses' => 'RegisterController@showRegisterForm']);
+Route::get('registration/register', ['as' => 'registration.show', 'uses' => 'RegistrationController@showRegisterForm']);
+Route::post('registration/register', ['as' => 'registration.store', 'uses' => 'RegistrationController@store']);
 
 Route::group(['middleware' => ['auth']], function () {
 	Route::get('password/change', ['as' => 'password.password', 'uses' => 'Auth\PasswordController@showChangePasswordForm']);

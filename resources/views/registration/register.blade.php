@@ -10,7 +10,7 @@
 	<div class="col-sm-12">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<form action="{{ url('register/register') }}" method="POST" class="form-horizontal" role="form">
+				<form action="{{ url('registration/register') }}" method="POST" class="form-horizontal" role="form">
 					{!! csrf_field() !!}
 					<div class="form-group">
 						<label for="name" class="col-sm-2 control-label">姓名</label>
@@ -40,6 +40,18 @@
 						<label for="email" class="col-sm-2 control-label">联系邮箱</label>
 						<div class="col-sm-10">
 						 	<input type="text" name="email" id="email" class="form-control" placeholder="联系邮箱">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="competitions[]" class="col-sm-2 control-label">活动选择</label>
+						<div class="col-sm-10">
+							@foreach ($competitions as $competition)
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="competitions[]" title="{{ $competition->title }}" value="{{ $competition->id }}">&nbsp;{{ $competition->title }}
+									</label>
+								</div>
+							@endforeach
 						</div>
 					</div>
 					<div class="form-group">

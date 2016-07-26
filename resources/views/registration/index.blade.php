@@ -28,24 +28,16 @@
 					</tr>
 				</thead>
 				<tbody>
-					@if (empty($registrations))
+					@foreach ($registrations as $registration)
 						<tr>
-							<td colspan="6" align="center">
-								<b class="text-danger">无人报名</b>
-							</td>
+							<td>{{ $registration->id }}</td>
+							<td>{{ $registration->name }}</td>
+							<td>{{ $registration->sex }}</td>
+							<td>{{ $registration->department }}</td>
+							<td>{{ $registration->phone }}</td>
+							<td>{{ $registration->email }}</td>
 						</tr>
-					@else
-						@foreach ($registrations as $registration)
-							<tr>
-								<td>{{ $registration->id }}</td>
-								<td>{{ $registration->name }}</td>
-								<td>{{ $registration->sex }}</td>
-								<td>{{ $registration->department }}</td>
-								<td>{{ $registration->phone }}</td>
-								<td>{{ $registration->email }}</td>
-							</tr>
-						@endforeach
-					@endif
+					@endforeach
 				</tbody>
 			</table>
 		</div>
