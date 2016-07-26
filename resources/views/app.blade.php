@@ -27,7 +27,7 @@
                 <div class="alert alert-danger alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <strong>注意：</strong>出错啦！
-                    <<ul>
+                    <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
@@ -39,7 +39,7 @@
 				欢迎你，{{ Auth::user()->username }}！
 				<ul class="nav nav-pills">
 					<li role="presentation">
-						<a href="{{ url('register/list') }}" title="活动管理">活动管理</a>
+						<a href="{{ url('competition') }}" title="活动管理">活动管理</a>
 					</li>
 					<li role="presentation">
 						<a href="{{ url('password/change') }}" title="修改密码">修改密码</a>
