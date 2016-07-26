@@ -38,13 +38,13 @@
 								<a href="{{ url('register/list', $competition->id) }}" title="报名列表" role="button" class="btn btn-info">报名列表</a>
 							</td>
 							<td>
-								<a href="{{ url('competition/show', $competition->id) }}" title="查看" role="button" class="btn btn-warning">查看</a>
+								<a href="{{ url('competition', $competition) }}" title="查看" role="button" class="btn btn-warning">查看</a>
 							</td>
 							<td>
-								<a href="{{ url('competition/edit', $competition->id) }}" title="编辑" role="button" class="btn btn-primary">编辑</a>
+								<a href="{{ url('competition/{competition}/edit', $competition) }}" title="编辑" role="button" class="btn btn-primary">编辑</a>
 							</td>
 							<td>
-								<form action="{{ url('competition/destroy', $competition->id) }}" method="POST" role="form" name="delete" onsubmit="return confirm('此活动相关的报名信息将全部删除不可恢复，你确定要删除这个活动吗？')">
+								<form action="{{ url('competition', $competition) }}" method="POST" role="form" name="delete" onsubmit="return confirm('此活动相关的报名信息将全部删除不可恢复，你确定要删除这个活动吗？')">
 									{!! method_field('delete') !!}
 									{!! csrf_field() !!}
 									<button type="submit" class="btn btn-danger">删除</button>

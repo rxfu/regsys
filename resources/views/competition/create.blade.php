@@ -8,7 +8,7 @@
 </div>
 <div class="row">
 	<div class="col-sm-12">
-		<form action="{{ url('competition/store') }}" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">
+		<form action="{{ url('competition') }}" method="POST" role="form" class="form-horizontal" enctype="multipart/form-data">
 			{!! csrf_field() !!}
 			<div class="form-group">
 				<label for="title" class="col-md-2 control-label">标题</label>
