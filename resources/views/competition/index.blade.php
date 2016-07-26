@@ -35,7 +35,7 @@
 							<td>{{ $competition->description }}</td>
 							<td>{{ $competition->is_active ? '是' : '否' }}</td>
 							<td>
-								<a href="{{ url('register/list', $competition->id) }}" title="报名列表" role="button" class="btn btn-info">报名列表</a>
+								<a href="{{ route('registration.index', $competition) }}" title="报名列表" role="button" class="btn btn-info">报名列表</a>
 							</td>
 							<td>
 								<a href="{{ url('competition', $competition) }}" title="查看" role="button" class="btn btn-warning">查看</a>

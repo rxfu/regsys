@@ -10,7 +10,7 @@ class CompetitionController extends Controller {
 	public function index() {
 		$competitions = Competition::orderBy('created_at', 'desc')->get();
 
-		return view('competition.list', compact('competitions'));
+		return view('competition.index', compact('competitions'));
 	}
 
 	public function create() {

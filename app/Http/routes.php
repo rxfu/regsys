@@ -12,15 +12,16 @@
  */
 
 Route::get('/', function () {
-	return redirect()->route('register.show');
+	return redirect()->route('registration.show');
 });
 
 Route::auth();
 
-Route::get('register/register', ['as' => 'register.show', 'uses' => 'RegisterController@showRegisterForm']);
+Route::get('registration/registration', ['as' => 'registration.show', 'uses' => 'RegisterController@showRegisterForm']);
 
 Route::group(['middleware' => ['auth']], function () {
 	Route::get('password/change', ['as' => 'password.password', 'uses' => 'Auth\PasswordController@showChangePasswordForm']);
 	Route::put('password/change', ['as' => 'password.change', 'uses' => 'Auth\PasswordController@changePassword']);
 	Route::resource('competition', 'CompetitionController');
+	Route::get('registration/{competition}', ['as' => 'registration.index', 'uses' => 'RegistrationController@index']);
 });
