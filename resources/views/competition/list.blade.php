@@ -41,7 +41,7 @@
 								<a href="{{ url('competition', $competition) }}" title="查看" role="button" class="btn btn-warning">查看</a>
 							</td>
 							<td>
-								<a href="{{ url('competition/{competition}/edit', $competition) }}" title="编辑" role="button" class="btn btn-primary">编辑</a>
+								<a href="{{ route('competition.edit', $competition) }}" title="编辑" role="button" class="btn btn-primary">编辑</a>
 							</td>
 							<td>
 								<form action="{{ url('competition', $competition) }}" method="POST" role="form" name="delete" onsubmit="return confirm('此活动相关的报名信息将全部删除不可恢复，你确定要删除这个活动吗？')">

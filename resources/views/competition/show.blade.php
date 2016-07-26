@@ -24,7 +24,7 @@
 				</tr>
 			</table>
 			<div class="col-md-offset-4 col-md-8">
-				<a href="{{ url('competition/{competition}/edit', $competition) }}" class="btn btn-primary" role="button" title="编辑">编辑</a>
+				<a href="{{ route('competition.edit', $competition) }}" class="btn btn-primary" role="button" title="编辑">编辑</a>
 			</div>
 		</div>
 	</div>

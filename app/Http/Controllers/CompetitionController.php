@@ -31,8 +31,37 @@ class CompetitionController extends Controller {
 	}
 
 	public function show($id) {
-		$competition = Competiton::find($id);
+		$competition = Competition::find($id);
 
 		return view('competition.show', compact('competition'));
+	}
+
+	public function edit($id) {
+		$competition = Competition::find($id);
+
+		return view('competition.edit', compact('competition'));
+	}
+
+	public function update(Request $request, $id) {
+		$inputs = $request->all();
+
+		$competition = Competition::find($id);
+		$competition->fill($inputs);
+
+		if ($competition->save()) {
+			return redirect('competition')->withStatus('活动更新成功');
+		} else {
+			return back()->withStatus('活动更新失败');
+		}
+	}
+
+	public function destroy($id) {
+		$competition = Competition::find($id);
+
+		if ($competition->delete()) {
+			return redirect('competition')->withStatus('活动删除成功');
+		} else {
+			return back()->withStatus('活动删除失败');
+		}
 	}
 }
