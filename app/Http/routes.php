@@ -25,4 +25,5 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::put('password/change', ['as' => 'password.change', 'uses' => 'Auth\PasswordController@changePassword']);
 	Route::resource('competition', 'CompetitionController');
 	Route::get('registration/{competition}', ['as' => 'registration.index', 'uses' => 'RegistrationController@index']);
+	Route::get('registration/{competition}/export', ['as' => 'registration.export', 'uses' => 'RegistrationController@export']);
 });

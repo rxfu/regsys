@@ -12,7 +12,7 @@
 			<div class="panel-heading">
 				<div class="panel-title">
 					<div class="text-right">
-						<a href="{{ url('registration/export') }}" title="导出列表"  role="button" class="btn btn-success">导出列表</a>
+						<a href="{{ route('registration.export', $competition) }}" title="导出列表"  role="button" class="btn btn-success">导出列表</a>
 					</div>
 				</div>
 			</div>
